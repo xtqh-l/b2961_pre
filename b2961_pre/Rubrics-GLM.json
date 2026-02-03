@@ -1,0 +1,164 @@
+[
+  {
+    "rubric_id": "R01",
+    "rubric_content": "系统必须能够创建多个城市（1-5个），每个城市包含住宅、工作场所、商店和地铁站等节点",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "这是系统的核心功能，通过代码检查和功能测试可以验证系统是否能够创建多个城市并包含所需的节点类型"
+  },
+  {
+    "rubric_id": "R02",
+    "rubric_content": "系统必须模拟人员的日常移动模式，包括从家到工作地点的通勤、社交访问和购物行为",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "人员移动模拟是系统的核心功能，可以通过运行模拟并观察人员行为来验证"
+  },
+  {
+    "rubric_id": "R03",
+    "rubric_content": "系统必须实现天气系统，包括晴天、雨天、雪天和热浪等天气条件，并能影响交通状况",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "天气系统是模拟真实交通状况的重要组成部分，可以通过模拟过程中的天气变化和其对交通的影响来验证"
+  },
+  {
+    "rubric_id": "R04",
+    "rubric_content": "系统必须实时显示道路拥堵情况和道路施工信息，并在可视化界面中用不同颜色表示",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "实时交通信息显示是系统的关键功能，需要通过人工观察可视化界面来验证"
+  },
+  {
+    "rubric_id": "R05",
+    "rubric_content": "系统必须支持通过上传城市地图图像来生成城市布局，并能从图像中提取道路网络信息",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "图像处理功能是系统的高级特性，可以通过上传图像并验证生成的城市布局来测试"
+  },
+  {
+    "rubric_id": "R06",
+    "rubric_content": "系统必须使用Flask和SocketIO实现实时通信，确保前端能够实时接收模拟数据更新",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "实时通信是系统架构的核心要求，可以通过检查代码中是否正确使用了Flask和SocketIO来验证"
+  },
+  {
+    "rubric_id": "R07",
+    "rubric_content": "系统必须使用D3.js实现城市网络的可视化，包括节点、边和交通流量的动态展示",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "可视化是系统的关键功能，可以通过检查前端代码是否正确使用D3.js来实现可视化"
+  },
+  {
+    "rubric_id": "R08",
+    "rubric_content": "系统必须处理异常情况，如无效的图像上传、网络连接中断等，并提供友好的错误提示",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "异常处理是系统鲁棒性的重要体现，可以通过测试各种异常情况来验证"
+  },
+  {
+    "rubric_id": "R09",
+    "rubric_content": "系统必须对输入参数进行验证，如城市数量、节点数量等，确保在合理范围内",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "输入验证是防止系统错误的重要手段，可以通过测试边界值和无效输入来验证"
+  },
+  {
+    "rubric_id": "R10",
+    "rubric_content": "代码必须遵循Python和JavaScript的最佳实践，包括命名规范、代码结构和注释",
+    "必要性": "Important",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "代码风格是代码质量的重要指标，可以通过人工审查代码来验证"
+  },
+  {
+    "rubric_id": "R11",
+    "rubric_content": "系统必须提供直观的用户界面，包括清晰的控制面板、实时统计信息和图例说明",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "用户界面是系统与用户交互的重要部分，可以通过人工观察界面来验证"
+  },
+  {
+    "rubric_id": "R12",
+    "rubric_content": "系统必须支持多城市切换，用户可以在不同城市的模拟视图之间切换",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "多城市切换是多城市模拟系统的关键功能，可以通过测试切换功能来验证"
+  },
+  {
+    "rubric_id": "R13",
+    "rubric_content": "系统必须在合理的响应时间内处理用户操作，如启动/停止模拟、切换城市等",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "响应时间是用户体验的重要指标，可以通过测量操作响应时间来验证"
+  },
+  {
+    "rubric_id": "R14",
+    "rubric_content": "系统必须有效管理内存使用，特别是在模拟大型城市和长时间运行时",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "内存管理是系统稳定运行的关键，可以通过监控内存使用情况来验证"
+  },
+  {
+    "rubric_id": "R15",
+    "rubric_content": "系统必须提供准确的统计信息，包括各状态人员数量、道路流量和峰值流量等",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "统计信息是系统输出的重要部分，可以通过对比模拟数据和统计显示来验证"
+  },
+  {
+    "rubric_id": "R16",
+    "rubric_content": "系统必须正确处理并发请求，特别是在多用户同时操作时",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "并发处理是Web应用的重要能力，可以通过模拟多用户同时操作来验证"
+  },
+  {
+    "rubric_id": "R17",
+    "rubric_content": "系统必须实现合理的路径规划算法，考虑道路拥堵和施工情况",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "路径规划是人员移动模拟的核心，可以通过检查路径规划算法和模拟结果来验证"
+  },
+  {
+    "rubric_id": "R18",
+    "rubric_content": "系统必须提供清晰的文档说明，包括安装指南、使用说明和API文档",
+    "必要性": "Optional",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "文档是项目维护和使用的重要支持，可以通过检查文档的完整性和清晰度来验证"
+  }
+]

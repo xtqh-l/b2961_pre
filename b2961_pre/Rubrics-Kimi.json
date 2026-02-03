@@ -1,0 +1,182 @@
+[
+  {
+    "rubric_id": "R01",
+    "rubric_content": "代码必须正确导入所有必需的模块和类（time, defaultdict, random, networkx, Person）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "导入语句是代码运行的基础要求，缺少任何必需模块都会导致运行时错误，属于显性功能要求，可通过静态代码分析验证"
+  },
+  {
+    "rubric_id": "R02",
+    "rubric_content": "Simulation类必须正确实现构造函数，初始化所有必需属性（city, people, time, end_time, occupancy, edge_traffic）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "构造函数是类实例化的核心，必须正确初始化所有属性以确保对象状态完整，属于基本功能要求"
+  },
+  {
+    "rubric_id": "R03",
+    "rubric_content": "tick()方法必须正确处理时间步逻辑，包括清空occupancy和edge_traffic字典",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "tick方法是模拟的核心逻辑，必须在每个时间步开始时清空状态数据，确保数据准确性"
+  },
+  {
+    "rubric_id": "R04",
+    "rubric_content": "tick()方法必须正确计算和更新交通流量统计（edge_traffic）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "交通流量统计是模拟的关键功能，需要正确遍历人员路径并统计边使用情况，属于隐性功能要求"
+  },
+  {
+    "rubric_id": "R05",
+    "rubric_content": "tick()方法必须正确调用city.update_road_traffic()更新道路统计信息",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "道路统计更新是城市模拟的重要组成部分，需要正确调用城市对象的方法"
+  },
+  {
+    "rubric_id": "R06",
+    "rubric_content": "tick()方法必须正确将交通信息共享给所有人员对象（p._current_traffic）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "交通信息共享是人员做出路径决策的基础，需要正确设置人员对象的交通属性"
+  },
+  {
+    "rubric_id": "R07",
+    "rubric_content": "tick()方法必须正确处理人员移动和位置更新逻辑",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "人员移动是模拟的核心功能，需要正确调用step方法并更新occupancy统计"
+  },
+  {
+    "rubric_id": "R08",
+    "rubric_content": "run()方法必须正确实现时间循环，在start_time和end_time之间运行",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "时间循环控制是模拟运行的基础，必须正确实现时间推进逻辑"
+  },
+  {
+    "rubric_id": "R09",
+    "rubric_content": "get_stats()方法必须返回包含所有必需统计字段的字典（at_home, at_work, travelling, visiting, shopping, at_airport）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "统计方法是获取模拟结果的主要接口，必须包含所有定义的统计字段"
+  },
+  {
+    "rubric_id": "R10",
+    "rubric_content": "WebSimulation类必须正确继承自Simulation类并实现构造函数",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "WebSimulation是Simulation的扩展，必须正确实现继承关系和构造函数"
+  },
+  {
+    "rubric_id": "R11",
+    "rubric_content": "WebSimulation类必须正确实现get_simulation_data()方法，返回完整的模拟数据结构",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "数据获取方法是Web界面显示的核心，必须返回完整且格式正确的数据"
+  },
+  {
+    "rubric_id": "R12",
+    "rubric_content": "get_simulation_data()方法必须正确处理节点数据，包含id、type、occupancy和is_subway字段",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rubric_content": "节点数据是前端可视化的基础，必须包含所有必需的字段"
+  },
+  {
+    "rubric_id": "R13",
+    "rubric_content": "get_simulation_data()方法必须正确处理边数据，包含source、target、traffic、roadworks和is_subway字段",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "边数据是网络可视化的关键，必须包含所有必需的属性字段"
+  },
+  {
+    "rubric_id": "R14",
+    "rubric_content": "WebSimulation.run()方法必须正确处理SocketIO通信和异常处理",
+    "必要性": "Essential",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "Web模拟需要稳定的网络通信和错误处理机制，确保系统稳定性"
+  },
+  {
+    "rubric_id": "R15",
+    "rubric_content": "代码必须遵循Python命名约定（snake_case for functions/variables, PascalCase for classes）",
+    "必要性": "Important",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "一致的命名约定提高代码可读性和维护性，属于重要的风格要求"
+  },
+  {
+    "rubric_id": "R16",
+    "rubric_content": "代码必须包含适当的注释说明关键逻辑和复杂算法",
+    "必要性": "Important",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "适当的注释有助于代码理解和维护，特别是在复杂的模拟逻辑中"
+  },
+  {
+    "rubric_id": "R17",
+    "rubric_content": "时间格式转换必须正确处理，确保HH:MM格式显示",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "时间显示格式是用户界面的重要组成部分，必须正确实现格式化逻辑"
+  },
+  {
+    "rubric_id": "R18",
+    "rubric_content": "代码必须正确处理天气信息获取，提供默认值机制",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "天气信息是模拟环境的重要组成部分，需要正确的获取和容错机制"
+  },
+  {
+    "rubric_id": "R19",
+    "rubric_content": "WebSimulation必须正确实现运行状态控制（running标志）",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "运行状态控制是Web模拟管理的关键，确保可以正确启动和停止模拟"
+  },
+  {
+    "rubric_id": "R20",
+    "rubric_content": "代码必须避免硬编码值，使用适当的常量或配置参数",
+    "必要性": "Important",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "避免硬编码提高代码的可配置性和可维护性，属于良好的编程实践"
+  }
+]

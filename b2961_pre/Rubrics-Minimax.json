@@ -1,0 +1,182 @@
+[
+  {
+    "rubric_id": "R001",
+    "rubric_content": "代码必须使用Python和Flask框架实现Web应用，支持实时WebSocket通信功能",
+    "必要性": "Essential",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "项目核心基于Flask + Flask-SocketIO架构，题目明确要求Web应用实现，这是系统的技术基础。通过导入语句检查可验证是否使用指定框架，是明确的显式要求。"
+  },
+  {
+    "rubric_id": "R002", 
+    "rubric_content": "必须实现图像上传和处理功能，支持Base64编码的城市地图图像解析和OpenCV处理",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）", 
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "项目具有智能城市建模功能，支持从上传图像自动提取道路网络。通过代码中的图像处理逻辑可验证是否实现了Base64解码、OpenCV边缘检测等核心功能，是重要的显式功能要求。"
+  },
+  {
+    "rubric_id": "R003",
+    "rubric_content": "必须使用NetworkX库实现图论算法，包括城市道路网络建模和最短路径计算",
+    "必要性": "Essential", 
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit", 
+    "rationale": "项目核心使用NetworkX进行图论计算，包括节点创建、边连接、最短路径算法。通过导入NetworkX和使用nx.shortest_path()等方法可验证，是系统的核心算法基础。"
+  },
+  {
+    "rubric_id": "R004",
+    "rubric_content": "必须实现多线程/异步处理，支持多个城市仿真实例的并发运行",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）", 
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "系统支持1-5个城市的并发仿真，通过threading、socketio.start_background_task或asyncio实现。检查代码中的并发处理逻辑，是提升系统性能的隐性要求。"
+  },
+  {
+    "rubric_id": "R005", 
+    "rubric_content": "必须实现数据验证机制，对用户输入的城市配置参数进行范围检查和类型验证",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "静态-人工验证", 
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "系统处理用户输入的城市配置（住宅数量、工作地点等），需要进行数据验证防止无效输入。通过检查参数范围验证逻辑（如10≤homes≤100）可验证，是保障系统稳定性的重要措施。"
+  },
+  {
+    "rubric_id": "R006",
+    "rubric_content": "必须使用NumPy进行图像矩阵运算，支持RGB到BGR颜色空间转换和图像数组处理",
+    "必要性": "Important", 
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "项目使用NumPy处理图像数据，包括颜色空间转换(cvtColor)、图像数组操作。通过导入numpy和使用np.array()等操作可验证，是图像处理的技术基础。"
+  },
+  {
+    "rubric_id": "R007",
+    "rubric_content": "必须实现错误处理和异常管理机制，包括图像处理失败、路径计算失败等情况的处理",
+    "必要性": "Essential",
+    "评估维度": "鲁棒性（robustness）", 
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "复杂系统需要完善的错误处理，包括图像格式验证、网络异常、算法失败等。通过try-catch块、异常类型处理、用户友好的错误信息可验证，是系统稳定运行的重要保障。"
+  },
+  {
+    "rubric_id": "R008",
+    "rubric_content": "必须实现实时数据推送机制，通过WebSocket向客户端发送仿真状态更新",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证", 
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "系统需要实时显示仿真结果，使用WebSocket进行双向通信。通过socketio.emit()调用和数据推送频率检查可验证，是Web应用的核心交互功能。"
+  },
+  {
+    "rubric_id": "R009", 
+    "rubric_content": "必须实现天气系统建模，包括天气状态变化和对交通仿真参数的影响",
+    "必要性": "Optional",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证", 
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "项目包含复杂的天气系统影响交通（雨雪天气增加通勤时间、热浪增加道路维修）。通过天气状态更新逻辑和交通参数调整可验证，是增强仿真真实感的可选功能。"
+  },
+  {
+    "rubric_id": "R010",
+    "rubric_content": "必须实现交通拥堵算法，包括基于边缘流量的动态延迟机制", 
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "系统实现复杂的交通拥堵建模，根据路段流量动态调整人员移动延迟。通过拥堵阈值检查、延迟计算逻辑可验证，是仿真真实性的重要体现。"
+  },
+  {
+    "rubric_id": "R011",
+    "rubric_content": "必须实现城市节点类型分类，包括住宅、工作场所、商店、地铁站、机场等不同功能节点",
+    "必要性": "Important", 
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit", 
+    "rationale": "城市建模包含多种功能节点类型，通过节点属性设置(type='home'/'work'/'shop')和功能区域规划可验证，是城市仿真的基础数据结构要求。"
+  },
+  {
+    "rubric_id": "R012",
+    "rubric_content": "必须实现人员行为建模，包括通勤路径预计算和多种活动模式（工作、社交、购物、机场访问）",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "静态-模型验证", 
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "人员行为建模是仿真的核心，包括早晨通勤、晚上回家、随机社交访问等。通过人员状态机设计、路径预计算、活动触发条件可验证，是仿真复杂性的重要体现。"
+  },
+  {
+    "rubric_id": "R013",
+    "rubric_content": "必须使用PIL库进行图像预处理，包括格式验证、尺寸检查、颜色模式转换",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit", 
+    "rationale": "项目使用PIL进行图像预处理，通过PIL.Image操作、图像尺寸验证、格式检查可验证，是保障图像处理稳定性的必要技术要求。"
+  },
+  {
+    "rubric_id": "R014",
+    "rubric_content": "必须实现道路网络连通性验证，确保所有城市节点都能通过路径到达",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "城市道路网络必须保证连通性，避免孤立节点。通过NetworkX连通性检查、路径可达性验证可验证，是保障仿真逻辑正确性的重要措施。"
+  },
+  {
+    "rubric_id": "R015", 
+    "rubric_content": "必须实现性能优化机制，包括预计算路径、缓存机制、限制连接数量防止图过度稠密",
+    "必要性": "Important",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit", 
+    "rationale": "大规模城市仿真需要性能优化，通过路径预计算(morning_path/evening_path)、节点连接数限制(MAX_CONNECTIONS=4)、缓存机制可验证，是保障系统可扩展性的重要技术要求。"
+  },
+  {
+    "rubric_id": "R016",
+    "rubric_content": "必须实现日志记录机制，记录仿真状态、错误信息和性能数据用于调试和监控",
+    "必要性": "Optional",
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证", 
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "复杂系统需要完善的日志记录，通过print()语句或logging模块记录关键状态、错误信息可验证，是系统维护和调试的重要辅助功能。"
+  },
+  {
+    "rubric_id": "R017",
+    "rubric_content": "必须实现模块化代码结构，将城市建模、人员行为、仿真引擎等核心功能分离到独立模块",
+    "必要性": "Important", 
+    "评估维度": "风格（style）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit",
+    "rationale": "项目采用模块化设计，通过city.py、person.py、simulation.py等独立文件可验证，是提升代码可维护性和可测试性的重要设计原则。"
+  },
+  {
+    "rubric_id": "R018",
+    "rubric_content": "必须实现配置参数化设计，支持通过参数调整城市规模、节点数量、仿真时间等关键参数",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）", 
+    "验证方式": "静态-模型验证",
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "系统支持灵活的城市配置，通过构造函数参数传递(home_count、work_count、subway_count)可验证，是系统可配置性和可重用性的重要特征。"
+  },
+  {
+    "rubric_id": "R019",
+    "rubric_content": "必须实现边界条件处理，包括城市规模限制、内存使用控制、防止无限循环等异常情况",
+    "必要性": "Essential",
+    "评估维度": "鲁棒性（robustness）",
+    "验证方式": "静态-人工验证",
+    "显性(Explicit)隐性（Implicit）": "Implicit", 
+    "rationale": "复杂系统需要完善的边界条件处理，通过城市规模检查(image dimensions limits)、内存管理、循环终止条件可验证，是保障系统稳定运行的必要措施。"
+  },
+  {
+    "rubric_id": "R020",
+    "rubric_content": "必须实现数据序列化机制，支持仿真状态数据的JSON格式输出和网络传输",
+    "必要性": "Important",
+    "评估维度": "功能要求（functional requirement）",
+    "验证方式": "动态-模型验证", 
+    "显性(Explicit)隐性（Implicit）": "Explicit",
+    "rationale": "系统需要通过网络传输仿真数据，通过字典结构构建、JSON序列化、WebSocket数据传输可验证，是Web应用数据交换的必要技术实现。"
+  }
+]
